@@ -12,10 +12,10 @@ function App() {
     getLocalTodos();
   }, []);
   useEffect(() => {
-    filterHanddler();
+    filterHandler();
     saveLocalTodos();
-  }, [todos, status]);
-  const filterHanddler = () => {
+  }, [todos, status, filterHandler, getLocalTodos]);
+  const filterHandler = () => {
     switch(status) {
       case 'completed':
         setFilteredTodos(todos.filter(todo => todo.completed === true));
